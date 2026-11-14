@@ -1,5 +1,6 @@
 services:
   portfolio:
+    container_name: tonysit-portfolio
     build:
       context: .
       dockerfile: Dockerfile
