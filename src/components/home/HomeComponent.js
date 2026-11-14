@@ -8,7 +8,6 @@ import '../../styles/HomeComponent.scss';
 import DispatchContext from '../../contexts/DispatchContext';
 import StateContext from '../../contexts/StateContext';
 import videoLanding from '../../assets/video/landing.mp4';
-import { iOS } from '../../helpers/DeviceUtils';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import SkillSectionView from './SkillSectionView';
 import ContactSectionView from './ContactSectionView';
@@ -80,12 +79,9 @@ const HomeComponent = () => {
     <div className="scroll-container">
       {/* <Toolbar /> */}
       <div className="section">
-        {
-          !iOS && 
-          <video id="landing-video" className='landing-video' autoPlay loop muted>
-            <source src={videoLanding} type='video/mp4' />
-          </video>
-        }
+        <video id="landing-video" className='landing-video' autoPlay loop muted playsInline preload="auto">
+          <source src={videoLanding} type='video/mp4' />
+        </video>
         <div
         id="landing-header"
         className="viewport-header"
