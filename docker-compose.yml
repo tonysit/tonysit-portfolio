@@ -3,6 +3,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
+    expose:
+      - "80"
+    networks:
+      - home-proxy
     restart: unless-stopped
+
+networks:
+  home-proxy:
+    external: true
