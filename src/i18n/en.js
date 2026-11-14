@@ -1,0 +1,4 @@
+export default {
+    '404 | Not Found': '404 | Not Found',
+    'Click': 'Click'
+}
