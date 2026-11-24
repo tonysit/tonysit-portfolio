@@ -97,7 +97,8 @@
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider node scripts/build.js && serve -l 3000 -s build",
     "test": "cross-env node scripts/test.js",
     "lint": "eslint . --ext js,jsx",
-    "lint:fix": "eslint . --ext js,jsx --fix"
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "server_build": "./scripts/build.sh"
   },
   "eslintConfig": {
     "extends": [
