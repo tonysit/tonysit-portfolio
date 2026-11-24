@@ -33,5 +33,19 @@ export default {
     'Built a React.js CMS for employee rosters, reports and operations, plus Laravel APIs for web, mobile and business services.': 'Built a React.js CMS for employee rosters, reports and operations, plus Laravel APIs for web, mobile and business services.',
     'Developed React Native apps for iOS and Android to manage work rosters, and integrated Microsoft Dynamics 365 APIs.': 'Developed React Native apps for iOS and Android to manage work rosters, and integrated Microsoft Dynamics 365 APIs.',
     'Deployed on AWS EC2 with Docker Compose and manually triggered GitHub Actions workflows through VPN.': 'Deployed on AWS EC2 with Docker Compose and manually triggered GitHub Actions workflows through VPN.',
-    'Technologies': 'Technologies'
+    'Technologies': 'Technologies',
+    'Contact details': 'Contact details',
+    "LET'S CONNECT": "LET'S CONNECT",
+    'Open for opportunities': 'Open for opportunities',
+    'Yes': 'Yes',
+    'Phone': 'Phone',
+    'Email': 'Email',
+    'Location': 'Location',
+    'United Kingdom': 'United Kingdom',
+    'Right to work': 'Right to work',
+    'Eligible to work in the UK': 'Eligible to work in the UK',
+    'Social profiles': 'Social profiles',
+    'Message sent successfully.': 'Message sent successfully.',
+    'Unable to send message. Please try again.': 'Unable to send message. Please try again.',
+    'Sending...': 'Sending...'
 }

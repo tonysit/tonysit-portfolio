@@ -32,5 +32,19 @@ export default {
     'Built a React.js CMS for employee rosters, reports and operations, plus Laravel APIs for web, mobile and business services.': '使用 React.js 构建员工排班、报告及内部运营 CMS，并使用 Laravel 开发网页、移动应用程序及业务服务所需的 API。',
     'Developed React Native apps for iOS and Android to manage work rosters, and integrated Microsoft Dynamics 365 APIs.': '开发 React Native iOS 和 Android 应用程序供员工查看及管理工作排班，并集成 Microsoft Dynamics 365 API。',
     'Deployed on AWS EC2 with Docker Compose and manually triggered GitHub Actions workflows through VPN.': '使用 Docker Compose 部署至 AWS EC2，并通过 VPN 手动触发 GitHub Actions 部署流程。',
-    'Technologies': '技术'
+    'Technologies': '技术',
+    'Contact details': '联系信息',
+    "LET'S CONNECT": '保持联系',
+    'Open for opportunities': '开放工作机会',
+    'Yes': '是',
+    'Phone': '电话',
+    'Email': '电子邮件',
+    'Location': '所在地',
+    'United Kingdom': '英国',
+    'Right to work': '工作资格',
+    'Eligible to work in the UK': '可在英国工作',
+    'Social profiles': '社交平台',
+    'Message sent successfully.': '消息已成功发送。',
+    'Unable to send message. Please try again.': '无法发送消息，请稍后重试。',
+    'Sending...': '发送中...'
 }

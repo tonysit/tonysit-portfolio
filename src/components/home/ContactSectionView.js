@@ -17,6 +17,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { iOS } from '../../helpers/DeviceUtils';
 import useWindowScroll from '../../hooks/useWindowScroll';
 import GoogleMap from '../common/GoogleMap';
+import ContactMapOverlayView from './ContactMapOverlayView';
 import FlashMessage from '../common/FlashMessage';
 
 const SpeedDialTheme = createTheme({
@@ -38,6 +39,7 @@ export default () => {
     const [mesage, setMessage] = React.useState('');
     const [errors, setErrors] = React.useState([]);
     const [isValidEmail, setIsValidEmail] = React.useState(true);
+    const [sending, setSending] = React.useState(false);
     const [flashOptions, setFlashOptions] = React.useState({
         open: false,
         type: '',
@@ -45,8 +47,10 @@ export default () => {
     });
 
 
-    const _submitButtonClicked = (e) => {
+    const _submitButtonClicked = async (e) => {
         e.preventDefault();
+        if (sending) return;
+
         let newErrors = [];
         let currentIsValidEmail = isValidEmail;
         if(!name){
@@ -64,14 +68,40 @@ export default () => {
         if(newErrors.length > 0 || !currentIsValidEmail){
             setErrors(newErrors);
         }else{
-            const subject = encodeURIComponent(`Contact from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${mesage}`);
-            window.location.href = `mailto:tony@playmore.com.hk?subject=${subject}&body=${body}`;
-            setFlashOptions({
-                open: true,
-                type: 'info',
-                msg: 'Your email app should open with the message ready to send.'
-            });
+            setSending(true);
+            try {
+                const response = await fetch('https://mail-turnstile.tony1994217.workers.dev/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name.trim(),
+                        email: email.trim(),
+                        subject: `Portfolio Contact from ${name.trim()}`,
+                        message: mesage.trim(),
+                    }),
+                });
+
+                if (!response.ok) throw new Error('Contact request failed');
+
+                setFlashOptions({
+                    open: true,
+                    type: 'success',
+                    msg: t('Message sent successfully.'),
+                });
+                setName('');
+                setEmail('');
+                setMessage('');
+                setErrors([]);
+                setIsValidEmail(true);
+            } catch (error) {
+                setFlashOptions({
+                    open: true,
+                    type: 'error',
+                    msg: t('Unable to send message. Please try again.'),
+                });
+            } finally {
+                setSending(false);
+            }
         }
     }
 
@@ -127,7 +157,7 @@ export default () => {
                     helperText={errors.includes('name') ? `(${t('Required')})` : ''}
                     />
                     <TextField 
-                    id="email" 
+                    id="email" value={email}
                     onChange={_textFieldChanged('email')} 
                     label={t('Email Address')} 
                     variant="filled" 
@@ -153,7 +183,8 @@ export default () => {
                     />
                 </Box>
             </Box>
-            <Box sx={{  width: '100%', height: '25%' }}>
+            <Box className="contact-map-footer" sx={{  width: '100%', height: '25%' }}>
+                <Box className="contact-map-stage">
                 <GoogleMap 
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                 width={'100%'} 
@@ -162,21 +193,24 @@ export default () => {
                     lat: 53.4615823,
                     lng: -2.1179265
                 }}
-                zoom={18}
+                zoom={10}
                 options={{
                     disableDefaultUI: true
                 }}
                 />
-                <Link href="#" underline="none" onClick={_submitButtonClicked} >
-                <ThemeProvider theme={SpeedDialTheme}>
-                    <Tooltip title={t('Submit')} placement="bottom" arrow>
-                        <SpeedDial
-                            ariaLabel="SpeedDial basic example"
-                            direction='down'
-                            hidden={!isScrollEnd}
-                            sx={{ position: 'absolute', bottom: ( height * 0.25 ) - ( iOS ? 20 : 40 ), right: 30 }}
-                            icon={<SpeedDialIcon icon={<SendRoundedIcon /> } />}
-                        ></SpeedDial>
+                <ContactMapOverlayView />
+                </Box>
+                <Link href="#" underline="none" onClick={_submitButtonClicked}>
+                    <ThemeProvider theme={SpeedDialTheme}>
+                        <Tooltip title={sending ? t('Sending...') : t('Submit')} placement="bottom" arrow>
+                            <SpeedDial
+                                ariaLabel={sending ? t('Sending...') : t('Submit')}
+                                direction="down"
+                                disabled={sending}
+                                hidden={!isScrollEnd}
+                                sx={{ position: 'absolute', bottom: (height * 0.25) - (iOS ? 20 : 40), right: 30 }}
+                                icon={<SpeedDialIcon icon={<SendRoundedIcon />} />}
+                            />
                         </Tooltip>
                     </ThemeProvider>
                 </Link>
