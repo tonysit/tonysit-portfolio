@@ -14,6 +14,7 @@ export default {
     'Tutor (Part-time)': '兼职导师',
     'Hong Kong': '香港',
     'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.': '为捷成饮料、香港贸发局及仲量联行香港等客户开发企业应用程序、员工应用程序及后端系统。',
+    "Maintained JLL Hong Kong's customised CMS and developed employee app features using Java, Objective-C and backend API integrations.": '维护仲量联行香港的内部运营 CMS，并使用 Java、Objective-C 及后端 API 集成开发员工应用程序功能。',
     'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.': '开发 PHP Laravel API、React.js CMS 平台及 React Native 应用程序，连接网页、移动应用程序及后端服务。',
     'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.': '使用 SQL/MySQL、Linux scripts、AWS EC2、Docker Compose 及 GitHub Actions 支持线上系统和部署，调查问题并发布修复。',
     'Worked with clients and teams on requirements, estimates, user support and delivery.': '与客户及团队合作梳理需求、估算工作、支持用户及交付项目。',
@@ -22,5 +23,14 @@ export default {
     'Delivered robotics and technology programmes to students with different learning needs.': '为不同学习需求的学生教授机器人及科技课程。',
     'Monitored progress and adapted teaching approaches using constructive feedback.': '跟进学习进度，并根据建设性反馈调整教学方式。',
     'Visit company website': '浏览公司网站',
-    'View Facebook page': '浏览 Facebook 专页'
+    'View Facebook page': '浏览 Facebook 专页',
+    'Jebsen Beverage': '捷成饮料',
+    'Enterprise Management System': '企业管理系统',
+    'Visit Jebsen website': '访问捷成网站',
+    'An integrated system with a web CMS, backend APIs and employee mobile apps for rosters and internal operations.': '整合网页 CMS、后端 API 及员工移动应用程序，用于工作排班和内部运营。',
+    'Designed, developed and deployed a platform with a web CMS, backend API and employee mobile apps.': '设计、开发并部署包含网页 CMS、后端 API 和员工移动应用程序的平台。',
+    'Built a React.js CMS for employee rosters, reports and operations, plus Laravel APIs for web, mobile and business services.': '使用 React.js 构建员工排班、报告及内部运营 CMS，并使用 Laravel 开发网页、移动应用程序及业务服务所需的 API。',
+    'Developed React Native apps for iOS and Android to manage work rosters, and integrated Microsoft Dynamics 365 APIs.': '开发 React Native iOS 和 Android 应用程序供员工查看及管理工作排班，并集成 Microsoft Dynamics 365 API。',
+    'Deployed on AWS EC2 with Docker Compose and manually triggered GitHub Actions workflows through VPN.': '使用 Docker Compose 部署至 AWS EC2，并通过 VPN 手动触发 GitHub Actions 部署流程。',
+    'Technologies': '技术'
 }

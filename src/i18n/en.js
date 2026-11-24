@@ -15,6 +15,7 @@ export default {
     'Tutor (Part-time)': 'Tutor (Part-time)',
     'Hong Kong': 'Hong Kong',
     'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.': 'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.',
+    "Maintained JLL Hong Kong's customised CMS and developed employee app features using Java, Objective-C and backend API integrations.": "Maintained JLL Hong Kong's customised CMS and developed employee app features using Java, Objective-C and backend API integrations.",
     'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.': 'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.',
     'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.': 'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.',
     'Worked with clients and teams on requirements, estimates, user support and delivery.': 'Worked with clients and teams on requirements, estimates, user support and delivery.',
@@ -23,5 +24,14 @@ export default {
     'Delivered robotics and technology programmes to students with different learning needs.': 'Delivered robotics and technology programmes to students with different learning needs.',
     'Monitored progress and adapted teaching approaches using constructive feedback.': 'Monitored progress and adapted teaching approaches using constructive feedback.',
     'Visit company website': 'Visit company website',
-    'View Facebook page': 'View Facebook page'
+    'View Facebook page': 'View Facebook page',
+    'Jebsen Beverage': 'Jebsen Beverage',
+    'Enterprise Management System': 'Enterprise Management System',
+    'Visit Jebsen website': 'Visit Jebsen website',
+    'An integrated system with a web CMS, backend APIs and employee mobile apps for rosters and internal operations.': 'An integrated system with a web CMS, backend APIs and employee mobile apps for rosters and internal operations.',
+    'Designed, developed and deployed a platform with a web CMS, backend API and employee mobile apps.': 'Designed, developed and deployed a platform with a web CMS, backend API and employee mobile apps.',
+    'Built a React.js CMS for employee rosters, reports and operations, plus Laravel APIs for web, mobile and business services.': 'Built a React.js CMS for employee rosters, reports and operations, plus Laravel APIs for web, mobile and business services.',
+    'Developed React Native apps for iOS and Android to manage work rosters, and integrated Microsoft Dynamics 365 APIs.': 'Developed React Native apps for iOS and Android to manage work rosters, and integrated Microsoft Dynamics 365 APIs.',
+    'Deployed on AWS EC2 with Docker Compose and manually triggered GitHub Actions workflows through VPN.': 'Deployed on AWS EC2 with Docker Compose and manually triggered GitHub Actions workflows through VPN.',
+    'Technologies': 'Technologies'
 }

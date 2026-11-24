@@ -17,6 +17,7 @@ const experiences = [
     linkLabel: 'Visit company website',
     highlights: [
       'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.',
+      "Maintained JLL Hong Kong's customised CMS and developed employee app features using Java, Objective-C and backend API integrations.",
       'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.',
       'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.',
       'Worked with clients and teams on requirements, estimates, user support and delivery.',
