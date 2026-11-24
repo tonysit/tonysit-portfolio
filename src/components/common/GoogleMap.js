@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 const GoogleMap = ({ height, width, apiKey, zoom, center, options }) => {
     const mapUrl = `https://www.google.com/maps?q=${center.lat},${center.lng}`;
+    console.log('GoogleMap: ', apiKey, mapUrl, center, zoom, options);
 
     return (
         // Important! Always set the container height explicitly
