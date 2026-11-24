@@ -314,6 +314,19 @@
   padding: 0.35rem 0.7rem;
 }
 
+.google-map-fallback {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  justify-content: center;
+}
+
+.google-map-fallback a {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .experience-content {
   margin: 0 auto;
   max-width: 1100px;
