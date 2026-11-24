@@ -1,4 +1,27 @@
 export default {
     '404 | Not Found': '404 | Not Found',
-    'Click': 'Click'
+    'Click': 'Click',
+    'The Open University of Hong Kong': 'The Open University of Hong Kong',
+    'Bachelor of Computing': 'Bachelor of Computing',
+    'Hong Kong Institute of Vocational Education': 'Hong Kong Institute of Vocational Education',
+    'Higher Diploma in Software Engineering': 'Higher Diploma in Software Engineering',
+    "Bachelor's Degree": "Bachelor's Degree",
+    'Higher Diploma': 'Higher Diploma',
+    "Academic studies in computing, progressing from a Higher Diploma to a Bachelor's degree.": "Academic studies in computing, progressing from a Higher Diploma to a Bachelor's degree.",
+    'Visit school website': 'Visit school website',
+    'Experience across web, mobile and backend development, production support, deployment and technical education.': 'Experience across web, mobile and backend development, production support, deployment and technical education.',
+    'Software Developer': 'Software Developer',
+    'Application Programmer': 'Application Programmer',
+    'Tutor (Part-time)': 'Tutor (Part-time)',
+    'Hong Kong': 'Hong Kong',
+    'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.': 'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.',
+    'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.': 'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.',
+    'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.': 'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.',
+    'Worked with clients and teams on requirements, estimates, user support and delivery.': 'Worked with clients and teams on requirements, estimates, user support and delivery.',
+    'Developed 3D mobile applications for entertainment and supporting web pages and server-side features.': 'Developed 3D mobile applications for entertainment and supporting web pages and server-side features.',
+    'Maintained specifications, change records and version histories while managing concurrent tasks to deadlines.': 'Maintained specifications, change records and version histories while managing concurrent tasks to deadlines.',
+    'Delivered robotics and technology programmes to students with different learning needs.': 'Delivered robotics and technology programmes to students with different learning needs.',
+    'Monitored progress and adapted teaching approaches using constructive feedback.': 'Monitored progress and adapted teaching approaches using constructive feedback.',
+    'Visit company website': 'Visit company website',
+    'View Facebook page': 'View Facebook page'
 }

@@ -10,6 +10,8 @@ import StateContext from '../../contexts/StateContext';
 import videoLanding from '../../assets/video/landing.mp4';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import SkillSectionView from './SkillSectionView';
+import EducationSectionView from './EducationSectionView';
+import ExperienceSectionView from './ExperienceSectionView';
 import ContactSectionView from './ContactSectionView';
 import Typewriter from '../common/Typewriter';
 import useIsVisible from '../../hooks/useIsVisible';
@@ -106,11 +108,13 @@ const HomeComponent = () => {
         <Toolbar />
         <div ref={educationRef}></div>
         <Typography variant="h2" gutterBottom component="div" color="common.white" style={{fontWeight: 500, marginBottom: 0}}>{t('Education')}</Typography>
+        <EducationSectionView />
       </div>
       <div id="experiences" className="section">
         <Toolbar />
         <div ref={experiencesRef}></div>
         <Typography variant="h2" gutterBottom component="div" color="common.white" style={{fontWeight: 500, marginBottom: 0}}>{t('Experiences')}</Typography>
+        <ExperienceSectionView />
       </div>
       <div id="projects" className="section">
         <Toolbar />

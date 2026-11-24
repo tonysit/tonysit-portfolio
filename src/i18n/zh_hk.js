@@ -1,4 +1,27 @@
 export default {
     '404 | Not Found': '404 | 找不到網頁',
-    'Click': '點擊'
+    'Click': '點擊',
+    'The Open University of Hong Kong': '香港公開大學',
+    'Bachelor of Computing': '計算學學士',
+    'Hong Kong Institute of Vocational Education': '香港專業教育學院',
+    'Higher Diploma in Software Engineering': '軟件工程高級文憑',
+    "Bachelor's Degree": '學士學位',
+    'Higher Diploma': '高級文憑',
+    "Academic studies in computing, progressing from a Higher Diploma to a Bachelor's degree.": '修讀軟件工程高級文憑及計算學學士，建立計算機與軟件工程知識基礎。',
+    'Visit school website': '瀏覽院校網站',
+    'Experience across web, mobile and backend development, production support, deployment and technical education.': '具備網頁、流動應用及後端開發、生產支援、系統部署和科技教育經驗。',
+    'Software Developer': '軟件開發員',
+    'Application Programmer': '應用程式程式員',
+    'Tutor (Part-time)': '兼職導師',
+    'Hong Kong': '香港',
+    'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.': '為捷成飲料、香港貿發局及仲量聯行香港等客戶開發企業應用程式、員工應用程式及後端系統。',
+    'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.': '開發 PHP Laravel API、React.js CMS 平台及 React Native 應用程式，連接網頁、流動應用程式及後端服務。',
+    'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.': '使用 SQL/MySQL、Linux scripts、AWS EC2、Docker Compose 及 GitHub Actions 支援線上系統和部署，調查問題並發佈修正。',
+    'Worked with clients and teams on requirements, estimates, user support and delivery.': '與客戶及團隊合作釐清需求、估算工作、支援用戶及交付項目。',
+    'Developed 3D mobile applications for entertainment and supporting web pages and server-side features.': '開發娛樂用途的 3D 流動應用程式，以及配套網頁和伺服器端功能。',
+    'Maintained specifications, change records and version histories while managing concurrent tasks to deadlines.': '維護專案規格、變更紀錄及版本歷史，並按時管理多項並行工作。',
+    'Delivered robotics and technology programmes to students with different learning needs.': '為不同學習需要的學生教授機械人及科技課程。',
+    'Monitored progress and adapted teaching approaches using constructive feedback.': '跟進學習進度，並根據建設性回饋調整教學方式。',
+    'Visit company website': '瀏覽公司網站',
+    'View Facebook page': '瀏覽 Facebook 專頁'
 }

@@ -1,3 +1,26 @@
 export default {
-    '404 | Not Found': '404 | 找不到網頁'
+    '404 | Not Found': '404 | 找不到網頁',
+    'The Open University of Hong Kong': '香港公开大学',
+    'Bachelor of Computing': '计算学学士',
+    'Hong Kong Institute of Vocational Education': '香港专业教育学院',
+    'Higher Diploma in Software Engineering': '软件工程高级文凭',
+    "Bachelor's Degree": '学士学位',
+    'Higher Diploma': '高级文凭',
+    "Academic studies in computing, progressing from a Higher Diploma to a Bachelor's degree.": '修读软件工程高级文凭及计算学学士，建立计算机与软件工程知识基础。',
+    'Visit school website': '浏览院校网站',
+    'Experience across web, mobile and backend development, production support, deployment and technical education.': '具备网页、移动应用及后端开发、生产支持、系统部署和科技教育经验。',
+    'Software Developer': '软件开发员',
+    'Application Programmer': '应用程序程序员',
+    'Tutor (Part-time)': '兼职导师',
+    'Hong Kong': '香港',
+    'Developed business applications, employee apps and backend systems for Jebsen Beverage, HKTDC and JLL Hong Kong.': '为捷成饮料、香港贸发局及仲量联行香港等客户开发企业应用程序、员工应用程序及后端系统。',
+    'Built PHP Laravel APIs, React.js CMS platforms and React Native apps, connecting web, mobile and backend services.': '开发 PHP Laravel API、React.js CMS 平台及 React Native 应用程序，连接网页、移动应用程序及后端服务。',
+    'Supported live systems and deployments with SQL/MySQL, Linux scripts, AWS EC2, Docker Compose and GitHub Actions; investigated and released fixes.': '使用 SQL/MySQL、Linux scripts、AWS EC2、Docker Compose 及 GitHub Actions 支持线上系统和部署，调查问题并发布修复。',
+    'Worked with clients and teams on requirements, estimates, user support and delivery.': '与客户及团队合作梳理需求、估算工作、支持用户及交付项目。',
+    'Developed 3D mobile applications for entertainment and supporting web pages and server-side features.': '开发娱乐用途的 3D 移动应用程序，以及配套网页和服务器端功能。',
+    'Maintained specifications, change records and version histories while managing concurrent tasks to deadlines.': '维护项目规格、变更记录及版本历史，并按时管理多项并行工作。',
+    'Delivered robotics and technology programmes to students with different learning needs.': '为不同学习需求的学生教授机器人及科技课程。',
+    'Monitored progress and adapted teaching approaches using constructive feedback.': '跟进学习进度，并根据建设性反馈调整教学方式。',
+    'Visit company website': '浏览公司网站',
+    'View Facebook page': '浏览 Facebook 专页'
 }
