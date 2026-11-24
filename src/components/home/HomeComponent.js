@@ -93,10 +93,10 @@ const HomeComponent = () => {
           opacity: openLandingHeader ? 1 : 0,
         }}
         >
-          <Typography variant="h2" gutterBottom component="div" color="common.white" style={{fontWeight: 500, marginBottom: 0}}>{t('On Wa Sit')}</Typography>
+          <Typography variant="h2" gutterBottom component="div" color="common.white" style={{fontWeight: 500, marginBottom: 0}}>{t('Tony Sit')}</Typography>
           <hr className="divider" />
           <Typography variant="h6" gutterBottom component="div" color="common.white" style={{fontWeight: 500}}>
-            <Typewriter text={t('Mobile Application Developer ')} delay={100} />
+            <Typewriter text={t('Software Application Developer ')} delay={100} />
             <span className="blink" style={{ color: "white" }}>{t('_')}</span>
           </Typography>
         </div>
