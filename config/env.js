@@ -62,7 +62,8 @@ const REACT_APP = /^REACT_APP_/i;
 
 function getClientEnvironment(publicUrl) {
   const raw = Object.keys(process.env)
-    .filter(key => REACT_APP.test(key))
+    // These values are embedded in public client bundles; never expose private credentials.
+    .filter(key => REACT_APP.test(key) && key !== 'REACT_APP_MAILGUN_API_KEY')
     .reduce(
       (env, key) => {
         env[key] = process.env[key];

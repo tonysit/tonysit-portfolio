@@ -4,6 +4,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: frontend
+      args:
+        SASS_PATH: ${SASS_PATH:-}
+        PORT: ${PORT:-}
+        REACT_APP_API_BASE: ${REACT_APP_API_BASE:-}
+        REACT_APP_GOOGLE_API_KEY: ${REACT_APP_GOOGLE_API_KEY:-}
     expose:
       - "80"
     networks:

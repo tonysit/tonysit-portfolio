@@ -1,6 +1,6 @@
 
 
-const API_ROOT = process.env.REACT_APP_API_ROOT;
+const API_ROOT = process.env.REACT_APP_API_BASE || process.env.REACT_APP_API_ROOT;
 let _token = null;
 
 export const setToken = (token) => {

@@ -10,7 +10,6 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
-import LinearProgress from '@mui/material/LinearProgress';
 import Tooltip from '@mui/material/Tooltip';
 import isEmail from 'validator/lib/isEmail';
 
@@ -18,9 +17,7 @@ import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { iOS } from '../../helpers/DeviceUtils';
 import useWindowScroll from '../../hooks/useWindowScroll';
 import GoogleMap from '../common/GoogleMap';
-import * as Mailgun from '../../helpers/Mailgun';
 import FlashMessage from '../common/FlashMessage';
-import moment from 'moment'
 
 const SpeedDialTheme = createTheme({
     palette: {
@@ -32,7 +29,7 @@ const SpeedDialTheme = createTheme({
 
 export default () => {
     const { t } = useTranslation();
-    const { height, width } = useWindowDimensions();
+    const { height } = useWindowDimensions();
     const { offset, scrollEnd } = useWindowScroll('.scroll-container');
 
     // set state
@@ -40,7 +37,6 @@ export default () => {
     const [email, setEmail] = React.useState('');
     const [mesage, setMessage] = React.useState('');
     const [errors, setErrors] = React.useState([]);
-    const [loading, setLoading] = React.useState(false);
     const [isValidEmail, setIsValidEmail] = React.useState(true);
     const [flashOptions, setFlashOptions] = React.useState({
         open: false,
@@ -49,7 +45,7 @@ export default () => {
     });
 
 
-    const _submitButtonClicked = async (e) => {
+    const _submitButtonClicked = (e) => {
         e.preventDefault();
         let newErrors = [];
         let currentIsValidEmail = isValidEmail;
@@ -68,64 +64,14 @@ export default () => {
         if(newErrors.length > 0 || !currentIsValidEmail){
             setErrors(newErrors);
         }else{
-            setLoading(true);
-            const senttime = localStorage.getItem('senttime');
-            let isOK = false;
-            if(senttime){
-                const minutes = moment().diff(moment(senttime), 'minutes');
-                console.log("minutes", minutes)
-                if(minutes > 5){
-                    const res = await Mailgun.send('tony@playmore.com.hk', 'Contact Me', `Name: ${name} \n Email: ${email} \n Message: ${mesage}`);
-                    if(res){
-                        localStorage.setItem("senttime", moment());
-                         setFlashOptions({
-                            open: true,
-                            type: 'success',
-                            msg: 'Successfully submitted.'
-                        });
-                    }else{
-                        setFlashOptions({
-                            open: true,
-                            type: 'error',
-                            msg: 'Can not submit again within 5 minutes.'
-                        });
-                    }
-                }else{
-                    setFlashOptions({
-                        open: true,
-                        type: 'error',
-                        msg: 'Fail submitted.'
-                    });
-                }
-            }else{
-                const res = await Mailgun.send('tony@playmore.com.hk', 'Contact Me', `Name: ${name} \n Email: ${email} \n Message: ${mesage}`);
-                if(res){
-                    localStorage.setItem("senttime", moment());
-                }else{
-                    setFlashOptions({
-                        open: true,
-                        type: 'error',
-                        msg: 'Fail submitted.'
-                    });
-                }
-            }
-
-            if(isOK){
-                localStorage.setItem("senttime", moment());
-                setFlashOptions({
-                    open: true,
-                    type: 'success',
-                    msg: 'Successfully submitted.'
-                });
-            }else{
-                
-            }
-
-            setEmail('');
-            setMessage('');
-            setName('');
-            setErrors([]);
-            setLoading(false);
+            const subject = encodeURIComponent(`Contact from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${mesage}`);
+            window.location.href = `mailto:tony@playmore.com.hk?subject=${subject}&body=${body}`;
+            setFlashOptions({
+                open: true,
+                type: 'info',
+                msg: 'Your email app should open with the message ready to send.'
+            });
         }
     }
 
@@ -142,7 +88,6 @@ export default () => {
     };
 
     const _textFieldChanged = (name) => (e) => {
-        console.log('***_textFieldChanged***', e.target.value)
         switch(name){
             case 'email': {
                 setEmail(e.target.value);
@@ -209,13 +154,13 @@ export default () => {
                 </Box>
             </Box>
             <Box sx={{  width: '100%', height: '25%' }}>
-                <LinearProgress color="secondary" hidden={!loading}/>
                 <GoogleMap 
+                apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
                 width={'100%'} 
                 height={'100%'}
                 center={{
-                    lat: 22.2991733,
-                    lng: 114.1739824
+                    lat: 53.4615823,
+                    lng: -2.1179265
                 }}
                 zoom={18}
                 options={{
@@ -228,7 +173,7 @@ export default () => {
                         <SpeedDial
                             ariaLabel="SpeedDial basic example"
                             direction='down'
-                            hidden={!isScrollEnd || loading}
+                            hidden={!isScrollEnd}
                             sx={{ position: 'absolute', bottom: ( height * 0.25 ) - ( iOS ? 20 : 40 ), right: 30 }}
                             icon={<SpeedDialIcon icon={<SendRoundedIcon /> } />}
                         ></SpeedDial>
@@ -249,4 +194,3 @@ export default () => {
         </React.Fragment>
     );
 }
-

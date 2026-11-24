@@ -7,8 +7,7 @@ import { useTranslation } from 'react-i18next';
 import '../../styles/HomeComponent.scss';
 import DispatchContext from '../../contexts/DispatchContext';
 import StateContext from '../../contexts/StateContext';
-import videoLanding from '../../assets/video/landing.mp4';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
+import videoLanding from '../../assets/video/landing-developer.mp4';
 import SkillSectionView from './SkillSectionView';
 import EducationSectionView from './EducationSectionView';
 import ExperienceSectionView from './ExperienceSectionView';
@@ -34,11 +33,9 @@ const HomeComponent = () => {
   console.log('useSelector: ', count, section);
 
   // use state section
-  const [landingHeaderWidth, setLandingHeaderWidth] = React.useState(0);
   const [openLandingHeader, setOpenLandingHeader] = React.useState(false);
 
   const { t } = useTranslation();
-  const { width } = useWindowDimensions();
 
   const skillsRef = React.useRef();
   const educationRef = React.useRef();
@@ -70,13 +67,9 @@ const HomeComponent = () => {
 
 
   React.useEffect(() => {
-    setTimeout(() => {
-      setLandingHeaderWidth(document.getElementById('landing-header').offsetWidth);
-      setOpenLandingHeader(true);
-    }, 500)
+    const timer = setTimeout(() => setOpenLandingHeader(true), 500);
+    return () => clearTimeout(timer);
   }, []);
-
-  console.log("left", landingHeaderWidth)
 
   return (
     <div className="scroll-container">
@@ -88,10 +81,7 @@ const HomeComponent = () => {
         <div
         id="landing-header"
         className="viewport-header"
-        style={{ 
-          left: landingHeaderWidth ? ( ( width / 2 ) - ( landingHeaderWidth / 2 ) ) : 0,
-          opacity: openLandingHeader ? 1 : 0,
-        }}
+        style={{ opacity: openLandingHeader ? 1 : 0 }}
         >
           <Typography variant="h2" gutterBottom component="div" color="common.white" style={{fontWeight: 500, marginBottom: 0}}>{t('Tony Sit')}</Typography>
           <hr className="divider" />
