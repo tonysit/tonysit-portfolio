@@ -46,5 +46,19 @@ export default {
     'Social profiles': '社交平台',
     'Message sent successfully.': '消息已成功发送。',
     'Unable to send message. Please try again.': '无法发送消息，请稍后重试。',
-    'Sending...': '发送中...'
+    'Sending...': '发送中...',
+    'Open navigation menu': '打开导航菜单',
+    'Close navigation': '关闭导航',
+    'Main navigation': '主导航',
+    'View project details': '查看项目详情',
+    'Visit JLL website': '访问仲量联行网站',
+    'JLL Hong Kong': '仲量联行香港',
+    'PM Link App': 'PM Link 应用程序',
+    'Employee app and customised CMS for JLL Hong Kong internal business operations.': '为仲量联行香港内部业务运营提供员工应用程序及定制 CMS。',
+    'Maintained a customised CMS for JLL Hong Kong internal business operations.': '维护仲量联行香港内部业务运营的定制 CMS。',
+    'Developed employee-facing features for the PM Link App.': '为 PM Link 应用程序开发员工功能。',
+    'Used Java, Objective-C and backend API integrations.': '使用 Java、Objective-C 及后端 API 集成。',
+    'Project carousel controls': '项目切换控件',
+    'Previous project': '上一个项目',
+    'Next project': '下一个项目'
 }

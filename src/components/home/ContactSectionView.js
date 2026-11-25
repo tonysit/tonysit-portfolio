@@ -193,9 +193,12 @@ export default () => {
                     lat: 53.4615823,
                     lng: -2.1179265
                 }}
-                zoom={10}
+                zoom={12}
                 options={{
-                    disableDefaultUI: true
+                    disableDefaultUI: true,
+                    gestureHandling: 'none',
+                    zoomControl: false,
+                    keyboardShortcuts: false,
                 }}
                 />
                 <ContactMapOverlayView />

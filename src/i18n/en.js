@@ -47,5 +47,19 @@ export default {
     'Social profiles': 'Social profiles',
     'Message sent successfully.': 'Message sent successfully.',
     'Unable to send message. Please try again.': 'Unable to send message. Please try again.',
-    'Sending...': 'Sending...'
+    'Sending...': 'Sending...',
+    'Open navigation menu': 'Open navigation menu',
+    'Close navigation': 'Close navigation',
+    'Main navigation': 'Main navigation',
+    'View project details': 'View project details',
+    'Visit JLL website': 'Visit JLL website',
+    'JLL Hong Kong': 'JLL Hong Kong',
+    'PM Link App': 'PM Link App',
+    'Employee app and customised CMS for JLL Hong Kong internal business operations.': 'Employee app and customised CMS for JLL Hong Kong internal business operations.',
+    'Maintained a customised CMS for JLL Hong Kong internal business operations.': 'Maintained a customised CMS for JLL Hong Kong internal business operations.',
+    'Developed employee-facing features for the PM Link App.': 'Developed employee-facing features for the PM Link App.',
+    'Used Java, Objective-C and backend API integrations.': 'Used Java, Objective-C and backend API integrations.',
+    'Project carousel controls': 'Project carousel controls',
+    'Previous project': 'Previous project',
+    'Next project': 'Next project'
 }
