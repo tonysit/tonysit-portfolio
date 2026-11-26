@@ -9,6 +9,9 @@ import { useTranslation } from 'react-i18next';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import jebsenLogo from '../../assets/image/jebsen-logo.svg';
 import jllLogo from '../../assets/image/jll-pmlink-launchscreen.png';
+import tdcLogo from '../../assets/image/tdc_logo.png';
+import tramwayLogo from '../../assets/image/tramway.jpg';
+import metersquareLogo from '../../assets/image/metersquare_logo.svg';
 
 const projects = [
   {
@@ -38,11 +41,64 @@ const projects = [
     logo: jllLogo,
     logoBackground: '#FFFFFF',
     logoShape: 'square',
-    technologies: ['Java', 'Objective-C', 'Backend APIs'],
+    technologies: ['Java', 'Objective-C', 'PHP'],
     highlights: [
       'Maintained a customised CMS for JLL Hong Kong internal business operations.',
       'Developed employee-facing features for the PM Link App.',
       'Used Java, Objective-C and backend API integrations.',
+    ],
+  },
+  {
+    id: 'tdc-intraapp',
+    company: 'Hong Kong Trade Development Council',
+    title: 'Intra-App',
+    summary: 'Internal Employee Mobile Application and customised CMS for Hong Kong Trade Development Council business operations.',
+    website: 'https://www.hktdc.com/',
+    websiteLabel: 'Visit HKTDC website',
+    logo: tdcLogo,
+    logoBackground: '#F47920',
+    logoShape: 'square',
+    technologies: ['Java', 'Objective-C', 'React Native', 'PHP'],
+    highlights: [
+      'Maintained and customised a CMS to support the business operations of the Hong Kong Trade Development Council (HKTDC).',
+      'Developed employee-facing features for the Intra-App to improve internal workflows and user experience.',
+      'Developed native mobile application features using Java (Android) and Objective-C (iOS), including OAuth 2.0 authentication and core application modules.',
+      'Utilised React Native to develop cross-platform mobile application modules, with support for over-the-air (OTA) JavaScript bundle updates to enable feature updates without requiring a full app release.',
+      'Developed and integrated backend APIs using PHP to support mobile application functionality and system integrations.'
+    ],
+  },
+  {
+    id: 'tramway',
+    company: 'HK Tramways',
+    title: 'TramwaysWorkspace App',
+    summary: 'Employee app and customised CMS for HK Tramways business operations.',
+    website: 'https://www.hktramways.com/',
+    websiteLabel: 'Visit Tramways website',
+    logo: tramwayLogo,
+    logoBackground: '#007549',
+    logoShape: 'square',
+    technologies: ['Vue.js', 'JavaScript', 'PHP Laravel', 'MySQL'],
+    highlights: [
+      'Developed and maintained a customised CMS using PHP Laravel, including RESTful API development to support HK Tramways business operations.',
+      'Developed a web application using Vue.js and integrated it into a cross-platform mobile application using React Native and Expo.',
+      'Developed various employee-facing modules, including Document Management, Duty Management, Company News, Push Notifications, and Messaging, to support daily operations and internal communications.'
+    ],
+  },
+  {
+    id: 'metersquare',
+    company: 'MeterSquare',
+    title: 'MeterSquare Web Site',
+    summary: 'Designed and developed the company’s official website to showcase its services, solutions, and corporate information.',
+    website: 'https://metersquare.io/',
+    websiteLabel: 'Visit MeterSquare website',
+    logo: metersquareLogo,
+    logoBackground: '#141414',
+    logoShape: 'square',
+    technologies: ['JavaScript', 'PHP Laravel', 'MySQL'],
+    highlights: [
+      'Developed and maintained the company’s official website using PHP Laravel, JavaScript, and MySQL.',
+      'Implemented website functionality and backend features to support the company’s online presence and business requirements.',
+      'Designed and developed responsive web pages to provide a consistent user experience across desktop and mobile devices.'
     ],
   },
 ];

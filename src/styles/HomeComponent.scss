@@ -237,22 +237,22 @@ body,
   border-radius: 13px 13px 0 0;
   display: flex;
   justify-content: center;
-  flex: 0 0 210px;
-  height: 210px;
+  flex: 0 0 165px;
+  height: 165px;
   margin: 0;
-  padding: 1.5rem 1rem;
+  padding: 1rem 0.75rem;
   width: 100%;
 }
 
 .project-logo {
-  height: 184px;
+  height: 142px;
   object-fit: contain;
-  width: 142px;
+  width: 110px;
 }
 
 .project-logo-square {
-  height: 170px;
-  width: 170px;
+  height: 136px;
+  width: 136px;
 }
 
 .project-card-content {
@@ -260,7 +260,7 @@ body,
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  padding: 1.25rem clamp(1.25rem, 4vw, 2rem) 2rem;
+  padding: 0.9rem clamp(1rem, 3vw, 1.5rem) 1.1rem;
 }
 
 .project-card-header {
@@ -316,15 +316,16 @@ body,
 
 .project-title.MuiTypography-root {
   color: white;
-  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
   font-weight: 650;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .project-summary.MuiTypography-root {
   color: rgba(255, 255, 255, 0.86);
-  line-height: 1.65;
-  margin: 1.25rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0.65rem 0 0;
   max-width: 800px;
 }
 
@@ -357,14 +358,14 @@ body,
 .project-technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
 }
 
 .project-card-footer {
   align-items: flex-end;
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 0.8rem;
   padding-right: 3.25rem;
 }
 
@@ -507,8 +508,8 @@ body,
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 0.8rem;
-  padding: 0.35rem 0.7rem;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.55rem;
 }
 
 .google-map-fallback {
@@ -967,24 +968,24 @@ body,
 
   .project-logo-panel {
     border-radius: 13px 13px 0 0;
-    flex-basis: 150px;
-    height: 150px;
+    flex-basis: 120px;
+    height: 120px;
     padding: 1rem 0.75rem;
     width: 100%;
   }
 
   .project-logo {
-    height: 126px;
-    width: 98px;
+    height: 102px;
+    width: 78px;
   }
 
   .project-logo-square {
-    height: 126px;
-    width: 126px;
+    height: 108px;
+    width: 108px;
   }
 
   .project-card-content {
-    padding: 1.1rem;
+    padding: 0.8rem 0.9rem 1rem;
   }
 
   .project-details-tooltip {
