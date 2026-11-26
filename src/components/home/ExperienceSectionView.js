@@ -1,7 +1,12 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import IconButton from '@mui/material/IconButton';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import ArrowOutwardRoundedIcon from '@mui/icons-material/ArrowOutwardRounded';
 import { useTranslation } from 'react-i18next';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import playMoreIcon from '../../assets/image/playmore-icon.png';
 import threeDPlusIcon from '../../assets/image/3d-plus-icon.png';
 import smartKiddoIcon from '../../assets/image/smart-kiddo-logo.jpg';
@@ -10,7 +15,7 @@ const experiences = [
   {
     company: 'PlayMore Limited',
     role: 'Software Developer',
-    period: 'Nov 2017 - Nov 2026',
+    period: '2017 - 2026',
     location: 'Hong Kong',
     logo: playMoreIcon,
     url: 'https://playmore.com.hk/',
@@ -51,57 +56,138 @@ const experiences = [
 
 const ExperienceSectionView = () => {
   const { t } = useTranslation();
+  const { width } = useWindowDimensions();
+  const [selectedExperience, setSelectedExperience] = React.useState(null);
+  const compactLayout = width < 900;
+
+  const handleExperienceKeyDown = (experience) => (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setSelectedExperience(experience);
+    }
+  };
 
   return (
-    <div className="experience-content">
-      <Typography className="experience-summary" component="p">
-        {t('Experience across web, mobile and backend development, production support, deployment and technical education.')}
-      </Typography>
-      <div className="experience-list">
-        {experiences.map(({ company, role, period, location, logo, url, linkLabel, highlights }, index) => (
-          <article
-            className={`experience-card${index === 0 ? ' experience-card-featured' : ''}`}
-            key={company}
-          >
-            <header className="experience-card-header">
-              <div className="experience-heading">
-                {logo && <img className="experience-logo" src={logo} alt={`${company} logo`} loading="lazy" />}
-                <div>
-                  <Typography className="experience-company" component="h3">
-                    {t(company)}
-                  </Typography>
-                  <Typography className="experience-role" component="p">
-                    {t(role)}
-                  </Typography>
-                </div>
-              </div>
-              <time className="experience-period">{period}</time>
-            </header>
-            <Typography className="experience-location" component="p">
-              {t(location)}
-            </Typography>
-            <ul className="experience-highlights">
-              {highlights.map((highlight) => (
-                <li key={highlight}>{t(highlight)}</li>
-              ))}
-            </ul>
-            {url && (
-              <Button
-                className="experience-link"
-                component="a"
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="outlined"
-                size="small"
+    <>
+      <div className="experience-content">
+        <Typography className="experience-summary" component="p">
+          {t('Experience across web, mobile and backend development, production support, deployment and technical education.')}
+        </Typography>
+        <div className="experience-list">
+          {experiences.map((experience, index) => {
+            const { company, role, period, location, logo, url, linkLabel, highlights } = experience;
+            return (
+              <article
+                className={`experience-card${index === 0 ? ' experience-card-featured' : ''}`}
+                key={company}
+                onClick={compactLayout ? () => setSelectedExperience(experience) : undefined}
+                onKeyDown={compactLayout ? handleExperienceKeyDown(experience) : undefined}
+                role={compactLayout ? 'button' : undefined}
+                tabIndex={compactLayout ? 0 : undefined}
+                aria-label={compactLayout ? `${t(company)} — ${t(role)}. ${t('View experience details')}` : undefined}
               >
-                {t(linkLabel)}
-              </Button>
-            )}
-          </article>
-        ))}
+                <header className="experience-card-header">
+                  <div className="experience-heading">
+                    {logo && <img className="experience-logo" src={logo} alt={`${company} logo`} loading="lazy" />}
+                    <div>
+                      <Typography className="experience-company" component="h3">
+                        {t(company)}
+                      </Typography>
+                      <Typography className="experience-role" component="p">
+                        {t(role)}
+                      </Typography>
+                    </div>
+                  </div>
+                  <time className="experience-period">{period}</time>
+                </header>
+                <Typography className="experience-location" component="p">
+                  {t(location)}
+                </Typography>
+                <ul className="experience-highlights">
+                  {highlights.map((highlight) => (
+                    <li key={highlight}>{t(highlight)}</li>
+                  ))}
+                </ul>
+                {url && (
+                  <Button
+                    className="experience-link"
+                    component="a"
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outlined"
+                    size="small"
+                  >
+                    {t(linkLabel)}
+                  </Button>
+                )}
+                <div className="experience-more-indicator" aria-hidden="true">
+                  <span>{t('View experience details')}</span>
+                  <ArrowOutwardRoundedIcon />
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </div>
-    </div>
+
+      <Dialog
+        fullScreen
+        open={Boolean(selectedExperience)}
+        onClose={() => setSelectedExperience(null)}
+        PaperProps={{ className: 'experience-dialog' }}
+      >
+        {selectedExperience && (
+          <div className="experience-dialog-scroll">
+            <div className="experience-dialog-shell">
+              <header className="experience-dialog-topbar">
+                <span>{t(selectedExperience.company)}</span>
+                <IconButton
+                  className="experience-dialog-close"
+                  aria-label={t('Close experience details')}
+                  onClick={() => setSelectedExperience(null)}
+                >
+                  <CloseRoundedIcon />
+                </IconButton>
+              </header>
+              <article className="experience-dialog-content">
+                {selectedExperience.logo && (
+                  <img className="experience-dialog-logo" src={selectedExperience.logo} alt={`${selectedExperience.company} logo`} />
+                )}
+                <Typography className="experience-dialog-company" component="p">
+                  {t(selectedExperience.company)}
+                </Typography>
+                <Typography className="experience-dialog-role" component="h2">
+                  {t(selectedExperience.role)}
+                </Typography>
+                <div className="experience-dialog-meta">
+                  <time>{selectedExperience.period}</time>
+                  <span>{t(selectedExperience.location)}</span>
+                </div>
+                <ul className="experience-highlights experience-dialog-highlights">
+                  {selectedExperience.highlights.map((highlight) => (
+                    <li key={highlight}>{t(highlight)}</li>
+                  ))}
+                </ul>
+                {selectedExperience.url && (
+                  <Button
+                    className="experience-link experience-dialog-link"
+                    component="a"
+                    href={selectedExperience.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outlined"
+                  >
+                    {t(selectedExperience.linkLabel)}
+                    <ArrowOutwardRoundedIcon />
+                  </Button>
+                )}
+              </article>
+            </div>
+          </div>
+        )}
+      </Dialog>
+    </>
   );
 };
 

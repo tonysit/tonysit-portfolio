@@ -52,6 +52,7 @@ export default {
     'Close navigation': '關閉導覽',
     'Main navigation': '主要導覽',
     'View project details': '查看專案詳情',
+    'Close project details': '關閉專案詳情',
     'Visit JLL website': '瀏覽仲量聯行網站',
     'JLL Hong Kong': '仲量聯行香港',
     'PM Link App': 'PM Link 應用程式',
@@ -61,5 +62,7 @@ export default {
     'Used Java, Objective-C and backend API integrations.': '使用 Java、Objective-C 及後端 API 整合。',
     'Project carousel controls': '專案切換控制',
     'Previous project': '上一個專案',
-    'Next project': '下一個專案'
+    'Next project': '下一個專案',
+    'View experience details': '查看工作經歷詳情',
+    'Close experience details': '關閉工作經歷詳情'
 }

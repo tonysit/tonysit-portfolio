@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import isEmail from 'validator/lib/isEmail';
 
 import useWindowDimensions from '../../hooks/useWindowDimensions';
-import { iOS } from '../../helpers/DeviceUtils';
+import { iOS, Android } from '../../helpers/DeviceUtils';
 import useWindowScroll from '../../hooks/useWindowScroll';
 import GoogleMap from '../common/GoogleMap';
 import ContactMapOverlayView from './ContactMapOverlayView';
@@ -30,7 +30,7 @@ const SpeedDialTheme = createTheme({
 
 export default () => {
     const { t } = useTranslation();
-    const { height } = useWindowDimensions();
+    const { width, height } = useWindowDimensions();
     const { offset, scrollEnd } = useWindowScroll('.scroll-container');
 
     // set state
@@ -131,7 +131,7 @@ export default () => {
         }
     }
 
-    const isScrollEnd = offset >= scrollEnd && scrollEnd;
+    const isNearScrollEnd = scrollEnd > 0 && offset >= scrollEnd - 50;
     return (
         <React.Fragment>
             <Box sx={{  width: '100%', height: '75%', textAlign: 'center' }}>
@@ -176,7 +176,7 @@ export default () => {
                     variant="filled" 
                     fullWidth 
                     margin="normal" 
-                    rows={8} 
+                    rows={width > 900 ? 8 : 6} 
                     multiline
                     error={errors.includes('mesage')}
                     helperText={errors.includes('mesage') ? `(${t('Required')})` : ''}
@@ -210,8 +210,12 @@ export default () => {
                                 ariaLabel={sending ? t('Sending...') : t('Submit')}
                                 direction="down"
                                 disabled={sending}
-                                hidden={!isScrollEnd}
-                                sx={{ position: 'absolute', bottom: (height * 0.25) - (iOS ? 20 : 40), right: 30 }}
+                                sx={{
+                                    position: 'absolute',
+                                    bottom: (height * 0.25) - (iOS || Android ? 35 : 40),
+                                    right: 30,
+                                    display: isNearScrollEnd ? 'flex' : 'none',
+                                }}
                                 icon={<SpeedDialIcon icon={<SendRoundedIcon />} />}
                             />
                         </Tooltip>

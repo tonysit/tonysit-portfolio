@@ -52,6 +52,7 @@ export default {
     'Close navigation': 'Close navigation',
     'Main navigation': 'Main navigation',
     'View project details': 'View project details',
+    'Close project details': 'Close project details',
     'Visit JLL website': 'Visit JLL website',
     'JLL Hong Kong': 'JLL Hong Kong',
     'PM Link App': 'PM Link App',
@@ -61,5 +62,7 @@ export default {
     'Used Java, Objective-C and backend API integrations.': 'Used Java, Objective-C and backend API integrations.',
     'Project carousel controls': 'Project carousel controls',
     'Previous project': 'Previous project',
-    'Next project': 'Next project'
+    'Next project': 'Next project',
+    'View experience details': 'View experience details',
+    'Close experience details': 'Close experience details'
 }

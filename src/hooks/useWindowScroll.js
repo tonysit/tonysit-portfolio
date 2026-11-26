@@ -1,23 +1,36 @@
 import { useState, useEffect } from 'react';
 
-function getWindowScroll(offset, scrollEnd) {
-  return {
-    offset,
-    scrollEnd
-  };
-}
-
 export default function useWindowScroll(id) {
-  const [windowScroll, setWindowScroll] = useState(getWindowScroll(0, 0));
+  const [windowScroll, setWindowScroll] = useState({ offset: 0, scrollEnd: 0 });
 
   useEffect(() => {
-    function handleScroll(event) {
-      setWindowScroll(getWindowScroll(event.target.scrollTop, event.target.scrollHeight - event.target.offsetHeight));
-    }
+    const element = document.querySelector(id);
+    if (!element) return undefined;
 
-    document.querySelector(id).addEventListener('scroll', handleScroll);
-    return () => document.querySelector(id).removeEventListener('scroll', handleScroll);
-  }, []);
+    const updateScroll = () => {
+      const offset = element.scrollTop;
+      const scrollEnd = element.scrollHeight - element.clientHeight;
+      setWindowScroll((current) => (
+        current.offset === offset && current.scrollEnd === scrollEnd
+          ? current
+          : { offset, scrollEnd }
+      ));
+    };
+
+    element.addEventListener('scroll', updateScroll, { passive: true });
+    window.addEventListener('resize', updateScroll);
+    const resizeObserver = typeof ResizeObserver === 'undefined'
+      ? null
+      : new ResizeObserver(updateScroll);
+    resizeObserver?.observe(element);
+    updateScroll();
+
+    return () => {
+      element.removeEventListener('scroll', updateScroll);
+      window.removeEventListener('resize', updateScroll);
+      resizeObserver?.disconnect();
+    };
+  }, [id]);
 
   return windowScroll;
 }

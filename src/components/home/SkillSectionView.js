@@ -28,6 +28,8 @@ const FrontEndSkills = [
     { name: 'React Native', value: 90 },
     { name: 'Java', value: 80 },
     { name: 'Objective C', value: 70 },
+    { name: 'JavaScript', value: 90 },
+    { name: 'React.js', value: 90 },
 ];
 
 const BackEndSkills = [
@@ -38,13 +40,13 @@ const BackEndSkills = [
 const Cards = [
     { 
         img: require('../../assets/image/card_v1.jpg').default, 
-        title: 'Lizard', 
-        content: 'Develop highly interactive Front end / User Interfaces for web and mobile applications' 
+        title: 'Infrastructure & Tools', 
+        content: 'Git, GitHub Actions, Docker, AWS, Firebase, Linux, Nginx, Apache, MySQL, MongoDB, Redis' 
     },
     { 
         img: require('../../assets/image/card_v2.jpg').default, 
-        title: 'Lizard', 
-        content: 'Integration of third party services such as Amazon Web Services (AWS), Google Cloud Platform (GCP), and Firebase' 
+        title: 'Languages', 
+        content: 'Cantonese (native), Mandarin (fluent), English (proficient, B2 / upper-intermediate).' 
     }
 ];
 
@@ -115,7 +117,7 @@ export default () => {
 
     const isMobile = width <= Variables.mobileScreenWidth;
     const cardWidth = ( width / ( isMobile ? 1 : 2 ) ) - 80;
-    const isNextCard = isMobile && cardIndex === 0 && Array.isArray(Cards) && cardIndex < Cards.length;
+    const isNextCard = width <= 500 && cardIndex === 0 && Array.isArray(Cards) && cardIndex < Cards.length;
     const isPreviousCard = isMobile && cardIndex - 1 >= 0;
 
     return (
