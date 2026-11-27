@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import isEmail from 'validator/lib/isEmail';
 
 import useWindowDimensions from '../../hooks/useWindowDimensions';
-import { iOS, Android } from '../../helpers/DeviceUtils';
+import { iOS, Android, isChromeIOS } from '../../helpers/DeviceUtils';
 import useWindowScroll from '../../hooks/useWindowScroll';
 import GoogleMap from '../common/GoogleMap';
 import ContactMapOverlayView from './ContactMapOverlayView';
@@ -134,7 +134,7 @@ export default () => {
     const isNearScrollEnd = scrollEnd > 0 && offset >= scrollEnd - 50;
     return (
         <React.Fragment>
-            <Box sx={{  width: '100%', height: '75%', textAlign: 'center' }}>
+            <Box sx={{  width: '100%', height: isChromeIOS ? '65%' : '75%', textAlign: 'center' }}>
                 <Toolbar />
                 <Typography variant="h2" gutterBottom component="div" color="common.white" style={{fontWeight: 500, marginTop: 5}}>{t('Contact')}</Typography>
 
@@ -183,7 +183,7 @@ export default () => {
                     />
                 </Box>
             </Box>
-            <Box className="contact-map-footer" sx={{  width: '100%', height: '25%' }}>
+            <Box className="contact-map-footer" sx={{  width: '100%', height: isChromeIOS ? '35%' : '25%' }}>
                 <Box className="contact-map-stage">
                 <GoogleMap 
                 apiKey={process.env.REACT_APP_GOOGLE_API_KEY}
@@ -212,7 +212,7 @@ export default () => {
                                 disabled={sending}
                                 sx={{
                                     position: 'absolute',
-                                    bottom: (height * 0.25) - (iOS || Android ? 35 : 40),
+                                    bottom: (height * (isChromeIOS ? 0.35 : 0.25)) - (isChromeIOS ? 0 : (iOS || Android ? 35 : 40)),
                                     right: 30,
                                     display: isNearScrollEnd ? 'flex' : 'none',
                                 }}
